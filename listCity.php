@@ -25,6 +25,7 @@
 
     <button type="submit">Search</button>
     <button type="button"><a href="/AssignmentDW/formCity.php">Return</a></button>
+    <button type="button" id="seedData">Xoá hết và Tạo Dữ liệu mẫu</button>
 </form>
 
 <div class=" w3-responsive w3-card-4">
@@ -47,140 +48,20 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-
+    var list = [
+        { name: "Hoàng Quốc Việt", id_district: 1, created_at: "2021-11-01", des: "Test", status: "0"  },
+        { name: "Khuất Duy Tiến", id_district: 2, created_at: "2021-11-01", des: "Test", status: "1"  },
+        { name: "Phố Tôn Đức Thắng", id_district: 3, created_at: "2021-11-01", des: "Test", status: "2"  },
+        { name: "Hàng Bột", id_district: 4, created_at: "2021-11-01", des: "Test", status: "0"  },
+        { name: "Khúc Thừa Dụ", id_district: 5, created_at: "2021-11-01", des: "Test", status: "1"  },
+        { name: "Giảng Võ", id_district: 1, created_at: "2021-11-01", des: "Test", status: "2"  },
+        { name: "Khuất Duy Tiến", id_district: 2, created_at: "2021-11-01", des: "Test", status: "0"  },
+        { name: "Phương Liệt", id_district: 3, created_at: "2021-11-01", des: "Test", status: "1"  },
+        { name: "Khuất Duy Tiến", id_district: 4, created_at: "2021-11-01", des: "Test", status: "2"  },
+        { name: "Bưởi", id_district: 5, created_at: "2021-11-01", des: "Test", status: "1"  },
+    ];
 
     $(document).ready(function () {
-        var dataSeed = `<tr class="w3-white">
-                                            <th>TestStreet1</th>
-                                            <th class="check_name">Hoàng Quốc Việt</th>
-                                            <th class="check_district">Cầu Giấy</th>
-                                            <th>2021-11-01</th>
-                                            <th>Test</th>
-                                            <th>
-                                                Đang sử dụng
-                                            </th>
-                                        </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet2</th>
-                                        <th class="check_name">Khuất Duy Tiến</th>
-                                        <th class="check_district">Cầu Giấy</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang thi công
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet3</th>
-                                        <th class="check_name">Phố Tôn Đức Thắng</th>
-                                        <th class="check_district">Đống Đa</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test thử</th>
-                                        <th>
-                                            Đang tu sửa
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet4</th>
-                                        <th class="check_name">Hàng Bột</th>
-                                        <th class="check_district">Đống Đa</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang tu sửa
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet5</th>
-                                        <th class="check_name">Khúc Thừa Dụ</th>
-                                        <th class="check_district">Cầu Giấy</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang thi công
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet6</th>
-                                        <th class="check_name">Giảng Võ</th>
-                                        <th class="check_district">Hai Bà Trưng</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang sử dụng
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet7</th>
-                                        <th class="check_name">Khuất Duy Tiến</th>
-                                        <th class="check_district">Hà Đông</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang sử dụng
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet8</th>
-                                        <th class="check_name">Phương Liệt</th>
-                                        <th class="check_district">Hoàn Kiếm</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang sử dụng
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet9</th>
-                                        <th class="check_name">Khuất Duy Tiến</th>
-                                        <th class="check_district">Cầu Giấy</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang tu sửa
-                                        </th>
-                                    </tr>
-                                    <tr class="w3-white">
-                                        <th>TestStreet10</th>
-                                        <th class="check_name">Bưởi</th>
-                                        <th class="check_district">Tây Hồ</th>
-                                        <th>2021-11-01</th>
-                                        <th>Test</th>
-                                        <th>
-                                            Đang sử dụng
-                                        </th>
-                                    </tr>
-                                    `;
-
-        var list = [
-            { name: "Hoàng Quốc Việt", id_district: 1, created_at: "2021-11-01", des: "Test", status: "0"  },
-            { name: "Khuất Duy Tiến", id_district: 2, created_at: "2021-11-01", des: "Test", status: "1"  },
-            { name: "Phố Tôn Đức Thắng", id_district: 3, created_at: "2021-11-01", des: "Test", status: "2"  },
-            { name: "Hàng Bột", id_district: 4, created_at: "2021-11-01", des: "Test", status: "0"  },
-            { name: "Khúc Thừa Dụ", id_district: 5, created_at: "2021-11-01", des: "Test", status: "1"  },
-            { name: "Giảng Võ", id_district: 1, created_at: "2021-11-01", des: "Test", status: "2"  },
-            { name: "Khuất Duy Tiến", id_district: 2, created_at: "2021-11-01", des: "Test", status: "0"  },
-            { name: "Phương Liệt", id_district: 3, created_at: "2021-11-01", des: "Test", status: "1"  },
-            { name: "Khuất Duy Tiến", id_district: 4, created_at: "2021-11-01", des: "Test", status: "2"  },
-            { name: "Bưởi", id_district: 5, created_at: "2021-11-01", des: "Test", status: "1"  },
-        ];
-        // seedData();
-        // function seedData(){
-        //     $.ajax({
-        //         url:'http://localhost:8080/AssignmentDW/seedData.php',
-        //         method: 'POST',
-        //         data: JSON.stringify(list),
-        //         success : function (responseData) {
-        //             alert(responseData);
-        //             // loadData();
-        //             // $('form[name=formCity]').trigger("reset");
-        //         },
-        //         error:function () {
-        //             alert('something error');
-        //         }
-        //     });
-        // }
-
         function loadData() {
             $.ajax({
                 url:'http://localhost:8080/AssignmentDW/listJSONStreet.php',
@@ -216,7 +97,7 @@
                         console.log(element.name);
                     })
 
-                    $('#content').html(dataSeed+contentHTML);
+                    $('#content').html(contentHTML);
                     // $('#content').append(contentHTML);
                     // console.log(data);
                 },
@@ -253,6 +134,23 @@
         }
         loadData();
         // $('#reload').click(loadData);
+        $('#seedData').click(function () {
+            $.ajax({
+                url:'http://localhost:8080/AssignmentDW/seedData.php',
+                method: 'POST',
+                data: JSON.stringify(list),
+                success : function (responseData) {
+                    alert(responseData.message);
+                    loadData();
+                },
+                error:function ($xhr,textStatus,errorThrown) {
+                    // alert('something error');
+                    console.log("ERROR : ", errorThrown);
+                    console.log("ERROR : ", $xhr);
+                    console.log("ERROR : ", textStatus);
+                }
+            });
+        });
     });
 
     $(document).ready(function () {
