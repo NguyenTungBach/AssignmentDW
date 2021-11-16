@@ -1,27 +1,30 @@
 <?php
     $data = json_decode(file_get_contents("php://input"), true);
-    $list = $data;
+    $list = $data['list'];
 //    print_r($list);
 //    $list =array(
 //            array("name"=>"Hoàng Quốc Việt", "id_district"=> 1, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "0"),
 //            array("name"=>"Phố Tôn Đức Thắng", "id_district"=> 2, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "1"),
 //            array("name"=>"Hàng Bột", "id_district"=> 3, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "2"),
-//            array("name"=>"Khúc Thừa Dụ", "id_district"=> 4, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "3"),
-//            array("name"=>"Giảng Võ", "id_district"=> 5, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "0"),
-//            array("name"=>"Khuất Duy Tiến", "id_district"=> 1, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "1"),
-//            array("name"=>"Phương Liệt", "id_district"=> 2, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "2"),
-//            array("name"=>"Khuất Duy Tiến", "id_district"=> 3, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "3"),
-//            array("name"=>"Khuất Duy Tiến", "id_district"=> 4, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "0"),
+//            array("name"=>"Khúc Thừa Dụ", "id_district"=> 4, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "0"),
+//            array("name"=>"Giảng Võ", "id_district"=> 5, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "1"),
+//            array("name"=>"Khuất Duy Tiến", "id_district"=> 1, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "2"),
+//            array("name"=>"Phương Liệt", "id_district"=> 2, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "0"),
+//            array("name"=>"Khuất Duy Tiến", "id_district"=> 3, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "1"),
+//            array("name"=>"Khuất Duy Tiến", "id_district"=> 4, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "2"),
 //            array("name"=>"Bưởi", "id_district"=> 5, "created_at"=> "2021-11-01", "des"=> "Test", "status"=> "1"),
 //        );
 
-    $listDistrict =array(
-        array("name"=>"Cầu Giấy"),
-        array("name"=>"Đống Đa"),
-        array("name"=>"Hai Bà Trưng"),
-        array("name"=>"Hà Đông"),
-        array("name"=>"Hoàn Kiếm"),
-    );
+//    $listDistrict =array(
+//        array("name"=>"Cầu Giấy"),
+//        array("name"=>"Đống Đa"),
+//        array("name"=>"Hai Bà Trưng"),
+//        array("name"=>"Hà Đông"),
+//        array("name"=>"Hoàn Kiếm"),
+//    );
+
+    $listDistrict =$data['listDistrict'];
+
 //    $name = implode(",",$name);
 //    $id_district = implode(",",$id_district);
 //    $created_at = implode(",",$created_at);

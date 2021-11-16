@@ -61,6 +61,13 @@
         { name: "Bưởi", id_district: 5, created_at: "2021-11-01", des: "Test", status: "1"  },
     ];
 
+    var listDistrict = [
+        { name: "Cầu Giấy"  },
+        { name: "Đống Đa"  },
+        { name: "Hai Bà Trưng"  },
+        { name: "Hà Đông"  },
+        { name: "Hoàn Kiếm"  },
+    ];
     $(document).ready(function () {
         function loadData() {
             $.ajax({
@@ -135,10 +142,15 @@
         loadData();
         // $('#reload').click(loadData);
         $('#seedData').click(function () {
+            let data = {
+                list: list,
+                listDistrict: listDistrict,
+            };
+
             $.ajax({
                 url:'http://localhost:8080/AssignmentDW/seedData.php',
                 method: 'POST',
-                data: JSON.stringify(list),
+                data: JSON.stringify(data),
                 success : function (responseData) {
                     alert(responseData.message);
                     loadData();

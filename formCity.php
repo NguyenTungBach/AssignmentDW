@@ -42,6 +42,7 @@
         <div class="w3-margin-top">
             <input type="submit" value="Submit">
             <button type="reset" id="reload">Refesh</button>
+            <button type="button" id="listCity">List</button>
         </div>
     </form>
 </div>
@@ -139,6 +140,9 @@
         }
         loadData();
         $('#reload').click(loadData);
+        $('#listCity').click(function () {
+            window.location.href = "http://localhost:8080/AssignmentDW/listCity.php";
+        });
     });
 
 
